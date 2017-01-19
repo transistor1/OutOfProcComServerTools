@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfProcComServerTools40", "OutOfProcComServerTools\OutOfProcComServerTools40.csproj", "{F627EA44-59A2-4363-95ED-0513E80DD6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfProcComServerToolsNuget", "OutOfProcComServerToolsNuget\OutOfProcComServerToolsNuget.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44167C00-2346-472B-8D6D-781C070C6656} = {44167C00-2346-472B-8D6D-781C070C6656}
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8} = {F627EA44-59A2-4363-95ED-0513E80DD6D8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfProcComServerTools45", "OutOfProcComServerTools\OutOfProcComServerTools45.csproj", "{44167C00-2346-472B-8D6D-781C070C6656}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8} = {F627EA44-59A2-4363-95ED-0513E80DD6D8}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SigningKey", "SigningKey", "{FB85A830-FCC3-4CDE-8B8B-45494E09A737}"
+	ProjectSection(SolutionItems) = preProject
+		OutOfProcComServerToolsKey.snk = OutOfProcComServerToolsKey.snk
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F627EA44-59A2-4363-95ED-0513E80DD6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44167C00-2346-472B-8D6D-781C070C6656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44167C00-2346-472B-8D6D-781C070C6656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44167C00-2346-472B-8D6D-781C070C6656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44167C00-2346-472B-8D6D-781C070C6656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
