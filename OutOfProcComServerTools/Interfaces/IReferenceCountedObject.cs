@@ -1,4 +1,4 @@
-namespace OutOfProcComServerTools.Interfaces
+﻿namespace OutOfProcComServerTools.Interfaces
 {
     public interface IReferenceCountedObject
     { }
