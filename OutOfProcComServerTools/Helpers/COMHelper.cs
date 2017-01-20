@@ -17,8 +17,6 @@
 
 #region Using directives
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.Reflection;
@@ -46,7 +44,7 @@ public class COMHelper
             // Create "LocalServer32" under the CLSID key
             using (RegistryKey subkey = keyCLSID.CreateSubKey("LocalServer32"))
             {
-                subkey.SetValue("", Assembly.GetExecutingAssembly().Location,
+                subkey.SetValue("", Assembly.GetCallingAssembly().Location,
                     RegistryValueKind.String);
             }
         }
