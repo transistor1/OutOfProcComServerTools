@@ -22,21 +22,8 @@ namespace OutOfProcComServerTools.Classes
                 Marshal.ThrowExceptionForHR(COMNative.CLASS_E_NOAGGREGATION);
             }
 
-            //Find the member decorated with the ClassId attribute.
-            MemberFilter clsIdFilter = new MemberFilter((MemberInfo memberInfo, object obj) =>
-            {
-                var attributes = memberInfo.GetCustomAttributesData();
-
-                return (attributes.Any<CustomAttributeData>(
-                        (attr) => attr.Constructor.DeclaringType == typeof(ClassIdAttribute)));
-            });
-
-            MemberInfo clsIdField = typeof(comType).FindMembers(MemberTypes.Field | MemberTypes.Property, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic, clsIdFilter, null).FirstOrDefault();
-
-            if (clsIdField == null)
-                throw new NotImplementedException("The ClassId member is not implemented in class " + typeof(comType).Name + ". Please make sure this class declares a static ClassId string field or property, containing the class's GUID.");
-
-            string clsId = (string)((dynamic)clsIdField)?.GetValue(null);
+            //Find the ClassId attribute
+            string clsId = ClassIdAttribute.GetClassIdValue(typeof(comType));
 
             if (riid == new Guid(clsId) ||
                 riid == new Guid(COMNative.IID_IDispatch) ||

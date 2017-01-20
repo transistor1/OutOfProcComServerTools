@@ -61,20 +61,13 @@ Add these COM registration functions to your COM object, so that RegAsm will ins
         }
 ```
 
-Add a ClassFactory to your project.  You don't need an actual implementation; just derive from GenericClassFactory, specifying your COM class and your COM interface:
-
-```C#
-    class ComClassFactory : GenericClassFactory<ComClass1, IComClass1>
-    { }
-```
-
 Now implement a `Main` method in your COM object's project:
 
 ```C#
     static void Main(string[] args)
     {
         // Run the out-of-process COM server
-        OutOfProcServer.Instance.Run(ComClass1.ClassId, typeof(ComClass1ClassFactory));
+        OutOfProcServer.Instance.Run(typeof(ComClass1), typeof(IComClass1));
     }
 ```
 
