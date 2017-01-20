@@ -1,4 +1,4 @@
-﻿using OutOfProcComServerTools.Classes;
+﻿using OutOfProcComServerTools.Attributes;
 using OutOfProcComServerTools.Interfaces;
 using System;
 using System.Collections.Generic;
