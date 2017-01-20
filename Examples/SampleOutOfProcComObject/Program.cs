@@ -11,7 +11,7 @@ namespace SampleOutOfProcComObject
     {
         static void Main(string[] args)
         {
-            OutOfProcServer.Instance.Run(SampleOopCom.ClassId, typeof(SampleOopComFactory));
+            OutOfProcServer.Instance.Run(typeof(SampleOopCom), typeof(ISampleOopCom));
         }
     }
 }
