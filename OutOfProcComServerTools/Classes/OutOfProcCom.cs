@@ -169,6 +169,25 @@ namespace OutOfProcComServerTools.Classes
         }
 
         /// <summary>
+        /// Convenience method, so that you don't need to provide an explicit IClassFactory implementation.
+        /// </summary>
+        /// <param name="comClassType">Type value of your COM class</param>
+        /// <param name="comClassInterface">Type value of your COM class's interface</param>
+        public void Run(Type comClassType, Type comClassInterface)
+        {
+            //Find the ClassId attribute
+            string clsId = ClassIdAttribute.GetClassIdValue(comClassType);
+
+            //Create a generic factory type, so user doesn't have to add
+            //boilerplate code to their project
+            var factoryType = typeof(GenericClassFactory<,>);
+            Type[] typeArgs = { comClassType, comClassInterface };
+            var concreteFactoryType = factoryType.MakeGenericType(typeArgs);
+
+            this.Run(clsId, concreteFactoryType);
+        }
+
+        /// <summary>
         /// Run the COM server. If the server is running, the function 
         /// returns directly.
         /// </summary>
