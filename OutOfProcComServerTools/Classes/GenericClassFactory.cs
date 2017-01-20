@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace OutOfProcComServerTools.Classes
 {
-    public class GenericClassFactory<comType, interfaceType> : IClassFactory where comType : ReferenceCountedObject 
+    public class GenericClassFactory<comType, interfaceType> : IClassFactory where comType : IReferenceCountedObject 
                                                                              where interfaceType : IReferenceCountedObject
     {
         public virtual int CreateInstance(IntPtr pUnkOuter, ref Guid riid,
