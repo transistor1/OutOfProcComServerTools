@@ -44,7 +44,7 @@ public class COMHelper
             // Create "LocalServer32" under the CLSID key
             using (RegistryKey subkey = keyCLSID.CreateSubKey("LocalServer32"))
             {
-                subkey.SetValue("", Assembly.GetExecutingAssembly().Location,
+                subkey.SetValue("", Assembly.GetCallingAssembly().Location,
                     RegistryValueKind.String);
             }
         }
