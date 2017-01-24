@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>OutOfProcComServerTools</id>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <title>OutOfProcComServerTools</title>
     <authors>microsoft.com,svrusso1@gmail.com</authors>
     <owners>Field Effect, LLC</owners>
@@ -15,7 +15,7 @@
       Tools to ease the creation of an out-of-proc COM server in .NET.
     </summary>
     <language>en-US</language>
-    <projectUrl>https://nuget.org/packages/OutOfProcComServerToolsNuget</projectUrl>
+    <projectUrl>https://github.com/transistor1/OutOfProcComServerTools</projectUrl>
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright  2017</copyright>
