@@ -177,6 +177,16 @@ namespace OutOfProcComServerTools.Classes
         /// <param name="comClassInterface">Type value of your COM class's interface</param>
         public void Run(Type comClassType, Type comClassInterface)
         {
+            lock (syncRoot) // Ensure thread-safe
+            {
+                // If the server is running, return directly.
+                if (_bRunning)
+                    return;
+
+                // Indicate that the server is running now.
+                _bRunning = true;
+            }
+
             //Find the ClassId attribute
             string clsId = ClassIdAttribute.GetClassIdValue(comClassType);
 
@@ -196,6 +206,7 @@ namespace OutOfProcComServerTools.Classes
         /// <remarks>The method is thread-safe.</remarks>
         public void Run(string classId, Type classFactoryType)
         {
+            /*
             lock (syncRoot) // Ensure thread-safe
             {
                 this.ClassId = classId;
@@ -208,7 +219,7 @@ namespace OutOfProcComServerTools.Classes
                 // Indicate that the server is running now.
                 _bRunning = true;
             }
-
+            */
             try
             {
                 // Call PreMessageLoop to initialize the member variables 
