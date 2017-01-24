@@ -204,7 +204,7 @@ namespace OutOfProcComServerTools.Classes
         /// returns directly.
         /// </summary>
         /// <remarks>The method is thread-safe.</remarks>
-        public void Run(string classId, Type classFactoryType)
+        internal void Run(string classId, Type classFactoryType)
         {
             /*
             lock (syncRoot) // Ensure thread-safe
