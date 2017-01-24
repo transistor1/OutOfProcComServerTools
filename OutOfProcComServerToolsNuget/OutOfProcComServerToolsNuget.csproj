@@ -106,8 +106,8 @@
   <PropertyGroup>
     <PreBuildEvent>set SRCBASE=$(SolutionDir)OutOfProcComServerTools\bin\$(ConfigurationName)\
 
-set SRC40=%25SRCBASE%25net40\OutOfProcComServerTools.dll
-set SRC45=%25SRCBASE%25net45\OutOfProcComServerTools.dll
+set SRC40=%25SRCBASE%25net40\OutOfProcComServerTools
+set SRC45=%25SRCBASE%25net45\OutOfProcComServerTools
 
 set DST40=$(ProjectDir)lib\net40
 set DST45=$(ProjectDir)lib\net45
@@ -115,8 +115,12 @@ set DST45=$(ProjectDir)lib\net45
 mkdir "%25DST40%25"
 mkdir "%25DST45%25"
 
-xcopy /Y "%25SRC40%25" "%25DST40%25"
-xcopy /Y "%25SRC45%25" "%25DST45%25"
-</PreBuildEvent>
+xcopy /Y "%25SRC40%25.dll" "%25DST40%25"
+xcopy /Y "%25SRC45%25.dll" "%25DST45%25"
+
+if "$(ConfigurationName)" == "Debug" (
+xcopy /Y "%25SRC40%25.pdb" "%25DST40%25"
+xcopy /Y "%25SRC45%25.pdb" "%25DST45%25"
+)</PreBuildEvent>
   </PropertyGroup>
 </Project>
