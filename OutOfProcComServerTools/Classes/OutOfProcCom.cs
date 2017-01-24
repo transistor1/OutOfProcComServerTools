@@ -196,6 +196,9 @@ namespace OutOfProcComServerTools.Classes
             Type[] typeArgs = { comClassType, comClassInterface };
             var concreteFactoryType = factoryType.MakeGenericType(typeArgs);
 
+            this.ClassId = clsId;
+            this.ClassFactoryType = concreteFactoryType;
+
             this.Run(clsId, concreteFactoryType);
         }
 
